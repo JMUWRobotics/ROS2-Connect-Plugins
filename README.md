@@ -1,4 +1,4 @@
-# ROS2-Connect-Plugins
+# ROS2 Connect Plugins
 
 ## License
 

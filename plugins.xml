@@ -3,7 +3,7 @@
     <description>This exemplary ROS2-Connect service server plugin allows to add two integers</description>
   </class>
   <class type="connect_plugins::AddTwoIntsServiceClient" base_class_type="service::ServiceClient">
-    <description>This exemplary ROS2-Connect service client plugin allows to add two integers/description>
+    <description>This exemplary ROS2-Connect service client plugin allows to add two integers</description>
   </class>
    <class type="connect_plugins::FibonacciActionServer" base_class_type="action::ActionServer">
     <description>This exemplary ROS2-Connect service server plugin allows to compute the fibonacci sequence</description>
