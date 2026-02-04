@@ -11,4 +11,7 @@
   <class type="connect_plugins::FibonacciActionClient" base_class_type="action::ActionClient">
     <description>This exemplary ROS2-Connect service client plugin allows to compute the fibonacci sequence</description>
   </class>
+  <class type="connect_plugins::ExampleAuthentication" base_class_type="authentication::Authentication">
+    <description>This exemplary ROS2-Connect service client plugin demonstrates how to implement authentication</description>
+  </class>
 </library>

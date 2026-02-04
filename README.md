@@ -7,7 +7,7 @@ These plugins include:
   - Service & Action Clients
   - Authentication Mechanisms
 
-The source code published here contains an example implementation of a service server & client for adding two integers and an action server & client for calculating the Fibonacci sequence.
+The source code published here contains an example implementation of a service server & client for adding two integers and an action server & client for calculating the Fibonacci sequence, as well as a sample implementation of authentication.
 
 Please see the documentation of [ROS2 Connect](https://github.com/JMUWRobotics/ROS2-Connect) for further insights.
 

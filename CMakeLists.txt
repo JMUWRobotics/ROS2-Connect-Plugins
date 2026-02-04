@@ -27,7 +27,8 @@ add_library(connect_plugins
         src/action/fibonacciActionClient.cpp
         src/action/fibonacciActionServer.cpp
         src/service/addTwoIntsServiceClient.cpp
-        src/service/addTwoIntsServiceServer.cpp)
+        src/service/addTwoIntsServiceServer.cpp
+        src/authentication/exampleAuthentication.cpp)
 add_library(connect_plugins::connect_plugins ALIAS connect_plugins)
 target_compile_features(connect_plugins PUBLIC c_std_99 cxx_std_23)  # Require C99 and C++23 (original was C++17)
 target_include_directories(connect_plugins PUBLIC
