@@ -34,13 +34,13 @@ target_compile_features(connect_plugins PUBLIC c_std_99 cxx_std_23)  # Require C
 target_include_directories(connect_plugins PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
-ament_target_dependencies(
-  connect_plugins
-  "connect"
-  "pluginlib"
-  "rclcpp"
-  "rclcpp_action"
-  "example_interfaces"
+target_link_libraries(connect_plugins PUBLIC
+  ${connect_TARGETS}
+  ${example_interfaces_TARGETS}
+  connect::connect_headers
+  pluginlib::pluginlib
+  rclcpp::rclcpp
+  rclcpp_action::rclcpp_action
 )
 
 # Causes the visibility macros to use dllexport rather than dllimport,
