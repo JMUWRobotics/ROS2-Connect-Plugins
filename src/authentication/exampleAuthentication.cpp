@@ -1,5 +1,5 @@
 // Copyright (c) 2026 Chair of Robotics (Computer Science XVII) @ Julius–Maximilians–University
-// 
+//
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
@@ -14,6 +14,9 @@ class ExampleAuthentication final : public authentication::Authentication {
     /**
      * Retrieves the authentication information given a user key
      *
+     * This is also the entry point to the ROS2 Connect authentication implementation.
+     * If the userKey, nameSpace or domainId is needed for "validateAuthentication" it has to be stored by the implementation.
+     *
      * @param logger logger to log with
      * @param endpoint endpoint to authenticate against, should start with "/"
      * @param host host to authenticate against
@@ -26,8 +29,25 @@ class ExampleAuthentication final : public authentication::Authentication {
      */
     bool getAuthenticationFromUserKey(const Logger &logger, const std::string &endpoint, const std::string &host, const std::string &port, const bool ssl, const std::string &userKey, const std::string &nameSpace, const int64_t domainId) override {
         // simply set some mockup data
-        this->setEnd(parse_iso8601_to_utc("2026-02-04T23:59:59Z"));
-        this->setUser("user@email.de");
+        this->end = this->parse_iso8601_to_utc("2026-02-04T23:59:59Z");
+        this->user = "user@email.de";
+        return true;
+    }
+
+    /**
+     * Re-Validates the authentication information
+     *
+     * This will be called regularly after authentication initially retrieved using "getAuthenticationFromUserKey".
+     * If this relays on information processed by "getAuthenticationFromUserKey", the information has to be stored by the implementation.
+     *
+     * @param logger logger to log with
+     * @param endpoint endpoint to validate the authentication against, should start with "/"
+     * @param host host to authenticate against
+     * @param port port to authenticate against
+     * @param ssl if ssl should be used to authentication
+     * @return true if authentication is (still) valid, false otherwise
+     */
+    bool reValidateAuthentication(const Logger &logger, const std::string &endpoint, const std::string &host, const std::string &port, const bool ssl) {
         return true;
     }
 
